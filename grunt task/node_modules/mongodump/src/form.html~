@@ -1,0 +1,170 @@
+<html>
+    <!-- ***************************************************HEAD************************************************************ -->
+    <head>
+        <title>My Javascript Page</title>
+        <!-- <h1 align="center">My Javascript page</h1> -->
+
+        <link href="./css/bootstrap.min.css" rel="stylesheet">
+        <script type="text/javascript" src="./js/appform.js"></script>
+        <!-- <div id="pop1" class="popover" align="bottom">
+        Add Records
+        </div> -->
+    </head>
+
+    <!-- **************************************************BODY*********************************************************** -->
+
+    <body onload="display()">
+
+        <div class="navbar navbar-inverse">
+            <div class="navbar-inner">
+                <p class="brand" style="font-size: 40px">
+                    MY JAVASCRIPT FORM
+                </p>
+            </div>
+        </div>
+        <link type="text/css" href="./css/app.css" rel="stylesheet" />
+
+        <div class="row2">
+            <div class="span12">
+                </br></br><table id="demo" border='2px' class="table-bordered"></table>
+            </div>
+        </div>
+
+        <!--********************************** popup window part *****************************************-->
+        <div class="container-fluid" align="right">
+            <!-- <button type="button" onclick="visible()" class="btn btn-primary" >Add Records</button> -->
+            <a onmouseover="showPopOver('pop1')" onmouseout="closePopOver('pop1')">
+            <button type="button" class="btn btn-primary" onclick="visible()">
+                +
+            </button></a>
+
+            <div id="pop1" class="popover">
+                Add more Records
+            </div>
+        </div>
+        <!--******************************************* FORM *******************************************-->
+        <form id="abc" class="aabb" name="asd">
+
+            <div class="span12 container-fluid">
+
+                <div align="right" class="container-fluid">
+                    <a onmouseover="showPop('hide')" onmouseout="closePop('hide')">
+                    <button type="button" onclick="hidee()" class="btn btn-danger">
+                        -
+                    </button> </a>
+
+                    <div id="hide" class="hidefrm">
+                        Hide Form
+                    </div>
+                </div>
+
+                <legend>
+                    Enter Your Details
+                </legend>
+
+                <label>Name:</label>
+
+                <input type="text" id="usrname" placeholder="Enter your name..." class="span3" required/>
+                </br>
+
+                <label>Phone:</label>
+                <input type="tel" id="phone" placeholder="Phone Number..." required/>
+                </br>
+
+                <label>Email ID:</label>
+                <input type="email" id="email" placeholder="Email..." required/>
+                </br>
+
+                <label>Sex:</label>
+                <label class="radio inline">
+                    <input type="radio" id="sexmale" name="sex" value="Male">
+                    Male</label>
+                <label class="radio inline">
+                    <input type="radio" id="sexfemale" name="sex" value="Female">
+                    Female</label></br></br>
+
+                <label>Date of birth:</label>
+                <input type="date" id="dob">
+
+                </br><label>Education:</label>
+                <select id="edu">
+                    <option id="ten" value="10">10</option>
+                    <option id="twl" value="12">12</option>
+                    <option id="grad" value="Graduate">Graduate</option>
+                    <option id="pg" value="Post Graduate">Post Graduate</option>
+                </select>
+
+                </br><label>I Like To:</label>
+                <label>
+                    <input type="checkbox" id="drv" name="like"/>
+                    Drive</label>
+                <label>
+                    <input type="checkbox" id="travel" name="like"/>
+                    Travel</label>
+                <label>
+                    <input type="checkbox" id="read" name="like" />
+                    Read</label></br>
+
+                <label>Upload your Image</label>
+
+                <input type="file" id="files" name="files[]"/>
+                <output id="list"></output>
+
+                </br><label>Technical Knowledge Level (0-10)</label>
+                <input id="tech" type="range" min="0" max="10" step="1"/>
+                </br></br>
+            </div>
+            <div class="form-actions">
+                <input type="submit" onclick="insertRecord();showw()" value="Insert Record" class="btn btn-primary" >
+                <!-- <button type="button" onclick="insertRecord()">Insert Record</button>-->
+                <button type="button" onclick="dropTable()" class="btn btn-danger">
+                    Drop Table
+                </button>
+                <button type="button" onclick="updateRecord();showw()" class="btn btn-info">
+                    Update Record
+                </button>
+                <!-- <button type="button" onclick='show()' class="btn btn-info">Update Record</button> -->
+                <button type="button" onclick="reset()" class="btn">
+                    Reset Form
+                </button>
+
+            </div>
+
+        </form>
+
+        <script>
+            function handleFileSelect(evt) {
+                var files = evt.target.files;
+                // FileList object
+
+                // Loop through the FileList and render image files as thumbnails.
+                for (var i = 0, f; f = files[i]; i++) {
+
+                    // Only process image files.
+                    if (!f.type.match('image.*')) {
+                        continue;
+                    }
+
+                    var reader = new FileReader();
+
+                    // Closure to capture the file information.
+                    reader.onload = (function(theFile) {
+                        return function(e) {
+                            // Render thumbnail.
+                            var span = document.createElement('span');
+                            span.innerHTML = ['<img  id="imageabc" src="', e.target.result, '" title="', escape(theFile.name), '"/>'].join('');
+                            document.getElementById('list').insertBefore(span, null);
+
+                        };
+                    })(f);
+
+                    // Read in the image file as a data URL.
+                    reader.readAsDataURL(f);
+                }
+            }
+
+            document.getElementById('files').addEventListener('change', handleFileSelect, false);
+        </s
+
+    </body>
+</html>

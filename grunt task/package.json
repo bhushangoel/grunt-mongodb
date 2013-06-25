@@ -1,0 +1,20 @@
+{
+  "name": "test",
+  "version": "1.2.3",
+  "main": "package-main-module",
+  "description": "something",
+  "dependencies": {
+    "grunt-contrib-uglify": "*"
+  },
+  "devDependencies": {
+    "jshint": "~2.1.2",
+    "grunt-contrib-watch": "~0.4.3",
+    "grunt-contrib-csslint": "~0.1.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "",
+  "author": "",
+  "license": "BSD"
+}

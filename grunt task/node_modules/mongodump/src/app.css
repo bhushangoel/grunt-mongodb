@@ -1,0 +1,42 @@
+body {
+    
+    background-color:ivory;
+    padding-top:0px;
+    padding-bottom:-40px;
+    }
+h1 {color:ivory;}
+
+.center {text-align:left:50px;}
+
+form {
+    visibilty:hidden;
+}
+.thumbnail
+{
+    height: 75px
+    border: 1px solid #000;
+    margin: 10px 5px 0 0;
+}
+
+/*p{
+    color:red;
+}*/
+
+.popover {
+    position: inherit;
+    display:marker;
+    z-index: 5;
+    /*height: 30px;*/
+    width: 100px;
+    background-color:#FCF8E3;
+    color:#0044CC;
+}
+
+.hidefrm{
+    position: inherit;
+    display:marker;
+    z-index: 5;
+    width: 80px;
+    background-color:#FCF8E3;
+    color:#0044CC;
+}
